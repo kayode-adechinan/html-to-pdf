@@ -1,4 +1,6 @@
-const puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
+
+import fs from "fs";
 
 (async () => {
   // Create a browser instance
@@ -7,14 +9,11 @@ const puppeteer = require("puppeteer");
   // Create a new page
   const page = await browser.newPage();
 
-  // Website URL to export as pdf
-  const website_url =
-    "https://www.bannerbear.com/blog/how-to-download-images-from-a-website-using-puppeteer/";
+  //Get HTML content from HTML file
+  const html = fs.readFileSync("sample.html", "utf-8");
+  await page.setContent(html, { waitUntil: "domcontentloaded" });
 
-  // Open URL in current page
-  await page.goto(website_url, { waitUntil: "networkidle0" });
-
-  //To reflect CSS used for screens instead of print
+  // To reflect CSS used for screens instead of print
   await page.emulateMediaType("screen");
 
   // Downlaod the PDF

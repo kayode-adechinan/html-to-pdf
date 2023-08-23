@@ -1,5 +1,5 @@
-const puppeteer = require("puppeteer");
-const fs = require("fs");
+import puppeteer from "puppeteer";
+import fs from "fs";
 
 (async () => {
   // Get type of source from process.argv, default to url

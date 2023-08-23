@@ -3,12 +3,36 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pdf": "node dist/index",
+    "pdf:html": "node dist/index-html",
+    "pdf:both": "node dist/index file ",
+    "build": "esbuild src/index.ts src/index-both.ts src/index-html.ts --platform=node  --outdir=dist",
+    "dev": "nodemon",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^21.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "esbuild": "^0.19.2",
+    "esbuild-jest": "^0.5.0",
+    "jest": "^29.6.3",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,mjs,js,json,graphql",
+    "exec": "npm run build && node dist/index",
+    "legacyWatch": true,
+    "verbose": false
   }
 }
