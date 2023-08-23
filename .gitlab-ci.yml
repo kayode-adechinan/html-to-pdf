@@ -1,5 +1,5 @@
 # Using this convenient image which uses Node.js as a base
-image: node:16
+image: alekzonder/puppeteer:latest
 
 # This folder is cached between builds for faster runs
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
@@ -10,7 +10,6 @@ cache:
 before_script:
   - apt-get update -qy
   - npm ci
-  - npm install puppeteer --only=dev
   - npm run build
   - npm run pdf
 
