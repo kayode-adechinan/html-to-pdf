@@ -10,6 +10,7 @@ cache:
 before_script:
   - apt-get update -qy
   - npm ci
+  - npm install puppeteer --only=dev
   - npm run build
   - npm run pdf
 
