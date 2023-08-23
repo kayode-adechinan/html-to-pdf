@@ -10,7 +10,7 @@ cache:
 before_script:
   - apt-get update -qy
   - npm ci
-  - npx playwright install
+  - npx playwright install --with-deps
   - npm run build
   - npm run pdf
 
