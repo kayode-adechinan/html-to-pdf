@@ -10,7 +10,7 @@
     "pdf:both": "node dist/index file ",
     "build": "esbuild src/index.ts src/index-both.ts src/index-html.ts --platform=node  --outdir=dist",
     "dev": "nodemon",
-    "test": "jest"
+    "test": "npx playwright test"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +18,7 @@
     "puppeteer": "^21.1.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.1",
     "concurrently": "^8.2.1",
     "esbuild": "^0.19.2",
     "esbuild-jest": "^0.5.0",
