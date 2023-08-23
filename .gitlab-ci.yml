@@ -1,5 +1,6 @@
 # Using this convenient image which uses Node.js as a base
-image: alekzonder/puppeteer:latest
+image: node:16
+
 # This folder is cached between builds for faster runs
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
 cache:
@@ -7,6 +8,7 @@ cache:
     - node_modules/
 
 before_script:
+  - apt-get update -qy
   - npm ci
   - npm run build
   - npm run pdf
