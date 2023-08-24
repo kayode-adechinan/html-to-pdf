@@ -10,7 +10,8 @@
     "pdf:both": "node dist/index file ",
     "build": "esbuild src/index.ts src/index-both.ts src/index-html.ts --platform=node  --outdir=dist",
     "dev": "nodemon",
-    "test": "npx playwright test"
+    "test": "jest",
+    "test:e2e": "npx playwright test"
   },
   "author": "",
   "license": "ISC",
