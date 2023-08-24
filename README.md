@@ -12,3 +12,7 @@ See, package json, **scripts** section
 
 - npm run build
 - npm run pdf
+
+## Web scraping
+
+- https://scrapingant.com/blog/playwright-web-scraping-guide

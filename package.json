@@ -8,7 +8,8 @@
     "pdf": "node dist/index",
     "pdf:html": "node dist/index-html",
     "pdf:both": "node dist/index file ",
-    "build": "esbuild src/index.ts src/index-both.ts src/index-html.ts --platform=node  --outdir=dist",
+    "pdf:plw": "node dist/index-plw ",
+    "build": "esbuild src/index.ts src/index-plw.ts  src/index-both.ts src/index-html.ts --platform=node  --outdir=dist",
     "dev": "nodemon",
     "test": "jest",
     "test:e2e": "npx playwright test"
@@ -25,6 +26,7 @@
     "esbuild-jest": "^0.5.0",
     "jest": "^29.6.3",
     "nodemon": "^3.0.1",
+    "playwright": "^1.37.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
