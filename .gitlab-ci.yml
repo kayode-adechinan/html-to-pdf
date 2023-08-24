@@ -14,6 +14,7 @@ before_script:
   # end pupeeter dependencies
   - npm ci
   #- npx playwright install --with-deps
+  - npm i puppeteer
   - npm run build
   - npm run pdf
 
